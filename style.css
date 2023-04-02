@@ -1,9 +1,116 @@
 @charset "utf-8";
 /* CSS Document */
+
 nav {
 	margin-top: 35px;
 	background-color:lightcyan
 }
+
+
+.content {
+    
+    background-color: white; //#034DA3 blue #EF1620 red
+    width: 100%;
+    margin: auto;
+    margin-bottom: 18vh;
+    padding: 2%;
+    
+}
+
+p {
+    
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+h1 {
+    
+    font-family: 'Ruslan Display', monospace;
+    color: white;
+    color: white;
+    font-size: 64px;
+    line-height: 64px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+h3 {
+    
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+h4 {
+    
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+}
+
+.text {
+    
+    background-color: #034DA3;
+    color: white;
+}
+
+#officials {
+    
+    margin: auto;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    justify-items: center;
+    grid-gap: 0px;
+    width: 1700px;
+    max-width: 100%;
+}
+
+.split div {
+    
+    margin-top: 5%;
+    vertical-align: top;
+    display: inline-block;
+    border: none;
+    width: 100%;
+    max-width:700px;
+}
+
+.head {
+    
+    position: static;
+    margin: auto;
+    max-height: 60vh;
+    max-width: 95%;
+    object-fit: cover;
+    align-self: center;
+    overflow: hidden;
+    padding-bottom: 15px;
+    min-height: 443px;
+    
+    background-color: #034DA3;
+}
+
+.head img {
+    
+    width: 250px; 
+    height: 250px; 
+    object-fit: cover;
+    padding: 25px;
+}
+
+#flag {
+    
+    padding: 10px;
+    margin: auto;
+    width: 60%;
+    max-width: 200px;
+    text-align: center;
+    
+}
+
 svg{
     width: 1.5em;
     height: 1.5em;
@@ -24,14 +131,16 @@ svg{
 }
 
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-.navbar-burger,body,h1,h2,h3,h4,html,li,p,textarea,ul{
+.navbar-burger,body,h2,h3,h4,html,li,p,textarea,ul{
     margin:0;
-    padding:0
+    padding:0;
 }
+/*
 h1,h2,h3,h4{
     font-size:100%;
     font-weight:400
 }
+*/
 ul{
     list-style:none
 }
@@ -39,7 +148,12 @@ button,input,textarea{
     margin:0
 }
 html{
-    box-sizing:border-box
+    box-sizing:border-box;
+    background-image: url(imgs/gov/country.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 *,:after,:before{
     box-sizing:inherit
@@ -69,10 +183,14 @@ code{
     font-family:monospace
 }
 body{
+    font-family: 'Space Grotesk', sans-serif;
+     text-align: center;
     color:#333;
     font-size:1em;
     font-weight:400;
     line-height:1.5
+        
+        
 }
 a{
     color:#485fc7;
