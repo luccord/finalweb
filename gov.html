@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Möldovistan Government</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +10,14 @@
 </head>
     
 <body>
+    
+    <div id = "clock">
+        <h4>The time in Möldovistan is</h4>
+        <span id = "hours">00</span>
+        <span>:</span>
+        <span id = "mins">00</span>
+        <span id = "session">AM</span>
+    </div>
     
     
 <img id = "flag" src = "imgs/gov/flag.png">
@@ -49,8 +57,8 @@
         
             <img src = "imgs/gov/vladimir.JPG">
             
-            <h3>The Honourable Vladimir Vladchinik</h2>
-            <h4>Minister of Defence</h3>
+            <h2>The Honourable Vladimir Vladchinik</h2>
+            <h3>Minister of Defence</h3>
         
         </div>
         
@@ -74,20 +82,87 @@
     
     </div>
     
-    <h1>The Cabinet</h1>
     
     <div class = "split">
+    <h1>Parliament</h1>
           <div>
-            <h1>Our City</h1>
-            <p><em>Iqaluit</em> has much to offer. While you're here feel free to check out the sights, and enjoy our breathtaking architecture. During the Book Fair, there will be many other exciting activities available across the city, so take advantage and enjoy your trip here to the fullest! Some interesting things to do include snowshoeing, snowmobiling, and enjoying our traditional Inuit snowcones. Delicious!</p>
+            <p>Möldovistan's beautiful, modern capitol building was built in 1979 and has been in use ever since. Its design was gifted by famous Italian architect,and good friend of the country, Antonio Abruzzese Dominco Franscica III. This was during his imprisonment in Möldovistan, following his arrest in 1973. It houses the country's day to day democratic operations, and serves as a headquarters for the coutnry's, albeit few, diplomatic interactions with other nations. It is located at the fringes of the country's ancient ancestral Karpinsky Woodlands.</p>
           </div>
           <div>
-            <img alt="Two images: left is a snowed-in car, right is a large very slushy rock." src = "imgs/snow-1.JPG">
+            <img alt="A beautiful modern building in a a lovely green environment." src = "imgs/gov/gov-office.jpg">
           </div>
       </div>
     
-<!--    <p class = "text">Hello this is some text, bro.</p>-->
+    <div class = "split" id = "splitty">
+    <h1>The Palace</h1>
+          <div>
+            <p>The Grand Palace was constructed in 1939 during the last days of the country's long-standing monarchy. Before the Great Revolution of 1942, this architectural wonder housed the King and his family. They were eventually overthrown and hanged by revolutionaries before the modern Möldovistani state was established. It was then turned into a museum for tourists to visit from around the world. It reported 27 visitors last year.</p>
+          </div>
+          <div>
+            <img alt="A gorgeous modern palace." src = "imgs/gov/palace.JPG">
+          </div>
+      </div>
     
-</div>
+    
+    
+    <footer>
+    
+        <img id = "flag" src = "imgs/gov/flag.png">
+        
+        <h1>Donate to Möldovistan!</h1>
+        
+        <br>
+        
+        <p>Okay we're exaggerating, we're really not doing that well as a country.. any and all donations are much appreciated as it helps keep our beautiful nation afloat! Also--if you can send a letter to your federal government requesting they recognize us, we'd really appreciate it.. xoxo</p>
+        
+        <h4>© 2023 The Government of Möldovistan, in all Her glory</h4>
+    
+    </footer>
+    
+<script>
+    
+        function displayTime() {
+            
+            var dateTime = new Date();
+            var hrs = dateTime.getHours();
+            var min = dateTime.getMinutes();
+            var session = document.getElementById('session');
+            
+            hrs = hrs +7; //Moldovistan time
+            
+            if(hrs => 24){
+                
+                hrs = hrs - 24;
+            }
+            
+            if(hrs >=12) {
+
+                session.innerHTML = 'PM';
+            }
+            
+            else {
+                
+                session.innerHTML = 'AM';
+            }
+            
+            if(hrs > 12) {
+                
+                hrs = hrs - 12;
+            }
+            
+            if(min < 10) {
+                
+                min = "0" + min;
+            }
+            
+            document.getElementById('hours').innerHTML = hrs;
+            document.getElementById('mins').innerHTML = min;
+            
+        }
+        
+        setInterval(displayTime, 10);
+        
+    </script>
+    
     
 </body>

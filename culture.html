@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Möldovistan Culture</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+    
+    
+    
+<body>
+    
+    <div id = "clock">
+        <h4>The time in Möldovistan is</h4>
+        <span id = "hours">00</span>
+        <span>:</span>
+        <span id = "mins">00</span>
+        <span id = "session">AM</span>
+    </div>
+    
+    <img id = "flag" src = "imgs/gov/flag.png">
+    
+    <h1>The Culture of Möldovistan</h1>
+    
+    <img class = "mainer" src = "imgs/culture/dance.jpg">
+    
+    <h3><em>The traditional Möldovistani dance, <strong>kolo</strong>.</em></h3>
+    
+    
+    <div class = "split">
+    <h1>Our Heritage</h1>
+          <div>
+            <p>Möldovistan is a nation with rich history and culture. With a unique heritage descended from Slavic and Meditteranean influences, the culture is a unique blend found nowhere else. We take pride in all aspects of our way of life despite our difficult and opressive past. Scroll for info on the culture of our beautiful land!</p>
+          </div>
+          <div>
+            <img alt="Beautiful, untouched Möldovistani wilderness." src = "imgs/culture/wasteland.jpg">
+              <h3><em>Möldovistani winters are especially hard.</em></h3>
+          </div>
+      </div>
+    
+    <div class = "split" id = "splitty">
+    <h1>Our Flag</h1>
+          <div>
+            <p>Our beautiful flag was adopted on the first National Flag Day, January 1, 1990. It was designed by legendary German artist Klaus Mueller during his imprisonment in Möldovistan in 1983, but was not finally approved until seven years later. It is truly a work of beauty, incoporating the pan-Slavic colours of red, white and blue. The red resppresents the blood and opression the Möldovistani people have endured and continue to endure. The blue represents the waters of the Black Sea that surround the island, and the white represents the nation's purity in conscience as Möldovistan has never been guilty of any wrongdoing ever. The compass in the bottom right represents the lmitless future of nation, as well as all the directions from which we have been oppressed from.</p>
+          </div>
+          <div>
+            <img alt="Beautiful, untouched Möldovistani wilderness." src = "imgs/gov/flag.png">
+              <h3><em>Designed by Klaus Mueller</em></h3>
+          </div>
+      </div>
+              
+    <div class = "split">
+    <h1>Our Cuisine</h1>
+          <div>
+            <p>Möldovistani cuisine is renowned throughout the world as among the best. Think about it, what comes to mind when you think <em>"good food?</em> Italian, French, Japanese.. and of course, Möldovistani! The dishes are as varied as Her people, but are mostly based around cheese, wheat and fish. This has kept our people strong throughout the ages. Our national dish is <strong>bidkaya</strong>, which translates literally into "yucky." Its name came about from ignorant foreigners who mistook its pungent aroma and strong flavour for tasting bad. Oh, how wrong they are!</p>
+          </div>
+          <div>
+            <img alt="Beautiful, untouched Möldovistani wilderness." src = "imgs/culture/food.jpg">
+              <h3><em>A Möldovistani babushka presenting her fresh <strong>bidkaya</strong>.</em></h3>
+          </div>
+      </div>
+    
+    <div class = "split" id = "splitty">
+    <h1>The Language</h1>
+          <div>
+            <p>Our wonderful language is the most beautiful in the world. Möldovistani falls under the East Slavic subfamily of Indo-European languages, but retains a lot of influence and vocabulary from Romance languages. Many a book and many a song have been written in this breathtaking language.</p>
+          </div>
+          <div>
+            <img alt="Beautiful, untouched Möldovistani wilderness." src = "imgs/culture/kids.jpg">
+              <h3>The survival of the Möldovistani language may be at risk in the future.</h3>
+          </div>
+      </div>
+    
+    
+    
+    <footer>
+    
+        <img id = "flag" src = "imgs/gov/flag.png">
+        
+        <h1>Donate to Möldovistan!</h1>
+        
+        <br>
+        
+        <p>Okay we're exaggerating, we're really not doing that well as a country.. any and all donations are much appreciated as it helps keep our beautiful nation afloat! Also--if you can send a letter to your federal government requesting they recognize us, we'd really appreciate it.. xoxo</p>
+        
+        <h4>© 2023 The Government of Möldovistan, in all Her glory</h4>
+    
+    </footer>
+    
+    
+   <script>
+    
+        function displayTime() {
+            
+            var dateTime = new Date();
+            var hrs = dateTime.getHours();
+            var min = dateTime.getMinutes();
+            var session = document.getElementById('session');
+            
+            hrs = hrs +7; //Moldovistan time
+            
+            if(hrs => 24){
+                
+                hrs = hrs - 24;
+            }
+            
+            if(hrs >=12) {
+
+                session.innerHTML = 'PM';
+            }
+            
+            else {
+                
+                session.innerHTML = 'AM';
+            }
+            
+            if(hrs > 12) {
+                
+                hrs = hrs - 12;
+            }
+            
+            if(min < 10) {
+                
+                min = "0" + min;
+            }
+            
+            document.getElementById('hours').innerHTML = hrs;
+            document.getElementById('mins').innerHTML = min;
+            
+        }
+        
+        setInterval(displayTime, 10);
+        
+    </script>
+    
+    
+</body>
