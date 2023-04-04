@@ -3,8 +3,7 @@
 
 nav {
 	margin-top: 35px;
-	background-color:lightcyan
-}
+	background-color:#F8A1A5;}
 
 
 .content {
@@ -264,7 +263,6 @@ svg{
 
 .article-excerpt {
   font-size: 16px;
-  
   margin-bottom: 10px;
 }
 
@@ -362,6 +360,9 @@ img{
     .container{
         max-width:960px
     }
+	.panel {
+  flex-direction: column;
+	}
 }
 @media screen and (min-width:1216px){
     .container:not(.is-max-desktop){
@@ -372,6 +373,9 @@ img{
     .container:not(.is-max-desktop):not(.is-max-widescreen){
         max-width:1344px
     }
+		.panel {
+		  flex-direction: row!important;
+	}
 }
 .image{
     display:block;
@@ -494,4 +498,8 @@ a.navbar-item.is-active,a.navbar-item:focus,a.navbar-item:focus-within,a.navbar-
 }
 .has-text-centered{
     text-align:center!important
+}
+
+form {
+	padding: 2em;
 }
