@@ -9,7 +9,7 @@ nav {
 
 .content {
     
-    background-color: white; //#034DA3 blue #EF1620 red
+    background-color: white; 
     width: 100%;
     margin: auto;
     margin-bottom: 18vh;
@@ -22,30 +22,111 @@ p {
     width: 90%;
     max-width: 400px;
     margin: auto;
+    background-color: #EF1620;
+    padding: 30px;
+    color: white;
+    margin-bottom: 
 }
 
 h1 {
     
     font-family: 'Ruslan Display', monospace;
     color: white;
+    color: white;
     font-size: 64px;
     line-height: 64px;
     max-width: 700px;
     margin: auto;
     text-align: center;
+    padding-top: 15px;
 }
 
-h3 {
+.split h1 {
+    
+    padding-top: 50px;
+    color: white;
+}
+
+.split p {
+    
+    margin-bottom: 50px;
+}
+
+#splitty {
+    
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#palace p {
+    
+    background-color: #034DA3;
+}
+
+h2 {
     
     color: white;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
 }
 
-h4 {
+h3 {
     
     color: white;
     font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+#clock {
+    
+    background-color: white;
+    position: fixed;
+    top: 80%;
+    left: 5%;
+    padding: 10px;
+    border: solid 6px #EF1620;
+    max-width: 30%;
+}
+
+#clock h4 {
+    
+    color: #034DA3;
+}
+
+span {
+    
+    font-family: 'Ruslan Display', monospace;
+    font-size: 30px;
+    color: #EF1620;
+}
+
+#flag {
+    
+    padding: 10px;
+    margin: auto;
+    width: 60%;
+    max-width: 200px;
+    text-align: center;
+    
+}
+
+footer {
+    
+    background-color: #034DA3;
+    padding-bottom: 2%;
+}
+
+footer #flag {
+    
+    margin-top: 5%;
+    padding: 0px;
+    border: solid 3px white;
+}
+
+footer h4 {
+    
+    color: white;
+    margin-top: 4%;
     font-weight: 400;
 }
 
@@ -67,14 +148,24 @@ h4 {
     max-width: 100%;
 }
 
+.split {
+    
+    margin: 0;
+    padding-bottom: 5%;
+    border: none;
+    width: 100%;
+    background-color: #034DA3;
+}
+
 .split div {
     
-    margin-top: 5%;
-    vertical-align: top;
+    margin: auto;
+    vertical-align: middle;
     display: inline-block;
     border: none;
     width: 100%;
     max-width:700px;
+    margin-top: 25px;
 }
 
 .head {
@@ -87,9 +178,15 @@ h4 {
     align-self: center;
     overflow: hidden;
     padding-bottom: 15px;
-    min-height: 443px;
+    height: 455px;
+    
+    margin-bottom: 25px;
     
     background-color: #034DA3;
+}
+
+.head:nth-child(odd) {
+    background: #EF1620;
 }
 
 .head img {
@@ -100,14 +197,13 @@ h4 {
     padding: 25px;
 }
 
-#flag {
+
+
+.mainer {
     
-    padding: 10px;
-    margin: auto;
-    width: 60%;
-    max-width: 200px;
-    text-align: center;
-    
+    width: 600px;
+    max-width: 90%;
+    margin: 25px;;
 }
 
 svg{
@@ -129,62 +225,8 @@ svg{
     text-align:left
 }
 
-.panel {
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-td {
-	background-color: #E8E8E8;
-}
-
-.article-preview {
-  width: 350px;
-  border: 1px solid #ccc;
-  display: flex;
-  margin:2em
-}
-
-.article-image {
-  width: 50%;
-}
-
-.article-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.article-content {
-  width: 50%;
-  padding: 10px;
-}
-
-.article-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.article-excerpt {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.read-more {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 3px;
-}
-
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-.navbar-burger,body,h2,h3,h4,html,li,p,textarea,ul{
+.navbar-burger,body,h2,h4,html,li,textarea,ul{
     margin:0;
     padding:0;
 }
@@ -314,9 +356,6 @@ img{
         background-color:#3a51bb;
         color:#fff
     }
-		.panel {
-		flex-direction: row!important;
-	}
 }
 .navbar>.container{
     width:100%
@@ -393,9 +432,12 @@ a.navbar-item.is-active,a.navbar-item:focus,a.navbar-item:focus-within,a.navbar-
     .container>.navbar .navbar-menu,.navbar>.container .navbar-menu{
         margin-right:-.75rem
     }
-	.panel {
-		flex-direction: column;
-	}
+    a.navbar-item.is-active{
+        color:#2b2523
+    }
+    a.navbar-item.is-active:not(:focus):not(:hover){
+        background-color:transparent
+    }
 }
 .has-text-centered{
     text-align:center!important
